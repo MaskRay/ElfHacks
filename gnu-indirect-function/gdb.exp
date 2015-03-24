@@ -1,0 +1,33 @@
+#!/usr/bin/expect -f
+log_user 0
+spawn gdb -n -q a
+set commands [split "b 11
+b 18
+r
+# original got entry [lindex $argv 0] points to the resolver
+x/xg [lindex $argv 0]
+x/xi \$__
+# the resolver which is called by ld-linux should return a pointer to the implementation
+f
+bt
+c
+# got entry [lindex $argv 0] points to foo_real
+x/xg [lindex $argv 0]
+x/xi \$__
+q
+" "\n"]
+set i 0
+expect {
+  "(gdb) " {
+    send_user $expect_out(buffer)
+    send "[lindex $commands $i]\r"
+    expect -re "\[^\n]\n" {
+      send_user "\033\[01;36m"
+      send_user $expect_out(buffer)
+      send_user "\033\[m"
+    }
+    incr i
+    exp_continue
+  }
+  "Quit"
+}

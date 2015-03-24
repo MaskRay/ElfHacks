@@ -1,0 +1,62 @@
+#!/usr/bin/expect -f
+log_user 0
+
+spawn gdb -n -q a
+set commands [split "set exec-wrapper env LD_LIBRARY_PATH=.
+b 4
+r
+# foo hasn't been called so got entry [lindex $argv 0] hasn't been resolved
+f
+x/xg [lindex $argv 0]
+x/xi \$__
+n
+# resolved
+x/xg [lindex $argv 0]
+x/xi \$__
+q
+" "\n"]
+set i 0
+expect {
+  "(gdb) " {
+    send_user $expect_out(buffer)
+    send "[lindex $commands $i]\r"
+    expect -re "\[^\n]\n" {
+      send_user "\033\[01;36m"
+      send_user $expect_out(buffer)
+      send_user "\033\[m"
+    }
+    incr i
+    exp_continue
+  }
+  "Quit"
+}
+close
+wait
+
+spawn gdb -n -q a
+set commands [split "set exec-wrapper env LD_LIBRARY_PATH=. LD_BIND_NOW=1
+b 4
+r
+# got entry [lindex $argv 0] has been resolved
+f
+x/xg [lindex $argv 0]
+x/xi \$__
+q
+" "\n"]
+set i 0
+expect {
+  "(gdb) " {
+    send_user $expect_out(buffer)
+    send "[lindex $commands $i]\r"
+    expect -re "\[^\n]\n" {
+      send_user "\033\[01;36m"
+      send_user $expect_out(buffer)
+      send_user "\033\[m"
+    }
+    incr i
+    exp_continue
+  }
+  "Quit"
+}
+close
+wait
