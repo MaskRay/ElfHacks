@@ -29,6 +29,7 @@ Dive into ELF files using simple self-contained examples.
 | as-syscall-i386                 | as          | make syscalls in i386 assembly                                                    |
 | shellcode-in-c                  | gcc,objcopy | write shellcode in c using gcc & objcopy                                          |
 | objcopy-link-blob               | objcopy     | link blob into executable                                                         |
+| libSegFault                     | glibc       |                                                                                   |
 
 ## Dynamic linker
 
