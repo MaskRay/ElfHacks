@@ -10,7 +10,6 @@ show: all
 	readelf -Wr a | egrep --color '^|.*foo.*'
 	readelf -d a | egrep --color '^|.*NOW.*'
 gdb: all
-	@got=0x$$(readelf -Wr a | grep foo | awk '{print $$1}')
-	./gdb.exp $$got
+	./gdb.exp 0x$$(readelf -Wr a | grep foo | awk '{print $$1}')
 clean:
 	$(RM) a libb.so

@@ -7,9 +7,9 @@ libb.so: b.o
 	gcc -shared $< -o $@
 libb.a: b.o
 	ar rcs $@ $<
-a: a.c
+a: a.c libb.so
 	gcc $< -Wl,-dy -L. -lb -o $@ # -dy is default
-aa: a.c
+aa: a.c libb.a
 	gcc $< -Wl,-dn -L. -lb -Wl,-dy -o $@
 show: all
 	ldd a | egrep --color '^|.*libb.*'

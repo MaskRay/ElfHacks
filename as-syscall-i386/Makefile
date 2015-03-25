@@ -9,7 +9,7 @@ a: a.o
 show: all
 	file a
 	strace ./a
-gdb: all
+gdb:
 	@:
 clean:
 	$(RM) a.o a

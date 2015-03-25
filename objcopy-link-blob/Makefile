@@ -8,7 +8,7 @@ foo.o: foo.txt
 a: a.o foo.o
 show:
 	@:
-gdb: all
-	@./gdb.exp 0x$$(readelf -Wr a | grep foo | awk '{print $$1}')
+gdb:
+	@:
 clean:
 	$(RM) a.o foo.o a

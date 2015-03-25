@@ -8,7 +8,7 @@ a: a.o
 	ld $< -o $@
 show: all
 	strace ./a
-gdb: all
+gdb:
 	@:
 clean:
 	$(RM) a.o a

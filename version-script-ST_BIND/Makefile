@@ -7,7 +7,7 @@ a: a.cc
 	g++ $< -Wl,--version-script,a.map -o $@
 show: all
 	nm -C a | egrep --color ' \w (A|foo|bar|baz|qux).*'
-gdb: all
+gdb:
 	@:
 clean:
 	$(RM) a

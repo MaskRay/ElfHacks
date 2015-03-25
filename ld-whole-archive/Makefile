@@ -13,7 +13,7 @@ show: all
 	readelf -c libb.a
 	nm -D libb.so | egrep --color 'foo|bar|baz' || :
 	nm -D libbb.so | egrep --color 'foo|bar|baz'
-gdb: all
+gdb:
 	@:
 clean:
 	$(RM) b.o libb.so libbb.so libb.a

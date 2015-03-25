@@ -14,7 +14,7 @@ show: all
 	readelf -d aa | egrep --color '.*RUNPATH.*'
 	./a || :
 	./aa
-gdb: all
+gdb:
 	@:
 clean:
 	$(RM) a aa libb.so

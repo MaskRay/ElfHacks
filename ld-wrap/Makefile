@@ -6,7 +6,7 @@ a: a.c
 	gcc $< -Wl,--wrap,puts -o $@
 show: all
 	./a
-gdb: all
+gdb:
 	@:
 clean:
 	$(RM) a

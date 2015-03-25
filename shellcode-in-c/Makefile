@@ -8,7 +8,7 @@ a.bin: a.o
 	objcopy -Obinary -j.text $< $@
 show: all
 	objdump -Mintel -mi386 -bbinary -D a.bin
-gdb: all
+gdb:
 	@:
 clean:
 	$(RM) a.o a.bin
