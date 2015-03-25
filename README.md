@@ -22,6 +22,7 @@ Dive into ELF files using simple self-contained examples.
 | ld-whole-archive                | ld          | `--whole-archive` includes every object files (not only those which are required) |
 | ld-wrap                         | ld          | `--wrap` makes undefined references to `SYMBOL` be resolved to `__wrap_SYMBOL`    |
 | LD\_BIND\_NOW                   | ld.so       | resolve all symbols at startup instead of deferring resolution to the first call  |
+| LD\_PROFILE                     | ld.so       | profile a shared library                                                          |
 | LD\_TRACE\_LOADED\_OBJECTS      | ld.so       | list dynamic library dependencies rather than running                             |
 | as-syscall                      | as          | make syscalls in x86-64 assembly                                                  |
 | as-syscall-i386                 | as          | make syscalls in i386 assembly                                                    |
