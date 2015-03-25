@@ -12,10 +12,10 @@ a: a.c
 aa: a.c
 	gcc $< -Wl,-dn -L. -lb -Wl,-dy -o $@
 show: all
-	ldd a
+	ldd a | egrep --color '^|.*libb.*'
 	ldd aa
-	nm a | grep foo
-	nm aa | grep foo
+	nm a | grep --color '.*foo.*'
+	nm aa | grep --color '.*foo.*'
 gdb:
 	@:
 clean:

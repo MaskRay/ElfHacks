@@ -5,9 +5,9 @@ all: a
 a: a.o b.o
 	g++ $^ -o $@
 show: all
-	nm -C b.o
+	nm -C b.o | egrep --color '^|.*W.*'
 	./a
 gdb:
 	@:
 clean:
-	$(RM) a.o
+	$(RM) a.o b.o a

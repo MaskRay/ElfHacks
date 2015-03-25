@@ -7,8 +7,7 @@ a.o: a.c
 aa.o: a.c
 	g++ $< -c -o $@
 show: all
-	nm a.o aa.o
-	readelf -s a.o aa.o
+	readelf -s a.o aa.o | egrep --color '^|.*data.*'
 gdb:
 	@:
 clean:
