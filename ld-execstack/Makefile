@@ -10,7 +10,7 @@ show: all
 	readelf -Wl a | egrep --color '^|.*GNU_STACK.*'
 	readelf -Wl aa | egrep --color '^|.*GNU_STACK.*'
 	diff <(readelf -Wa a) <(readelf -Wa aa) || :
-gdb:
-	@:
+gdb: all
+	./gdb.exp
 clean:
 	$(RM) a aa
