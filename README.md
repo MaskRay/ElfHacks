@@ -17,8 +17,18 @@ Dive into ELF files using simple self-contained examples.
 | ld-execstack                    | ld       | `-z` execstack and NX bit                                                         |
 | ld-export-dynamic               | ld       | `--export-dynamic` makes executables export dynamic symbols                       |
 | ld-now                          | ld       | `-z` now tells ld-linux to resolve symbols eagerly                                |
-| ld-rpath                        | ld       | `-rpath` adds a directory to runtime library search path                          |
+| ld-rpath                        | ld       | `-rpath` sets `DT_RUNPATH` which adds a directory to runtime library search path  |
 | ld-whole-archive                | ld       | `--whole-archive` includes every object files (not only those which are required) |
 | ld-wrap                         | ld       | `--wrap` makes undefined references to `SYMBOL` be resolved to `__wrap_SYMBOL`    |
 | LD\_BIND\_NOW                   | ld-linux | environment variable LD\_BIND\_NOW                                                |
 | as-syscall                      | as       | make syscalls in x86-64 assembly                                                  |
+
+## Dynamic linker
+
+The man page `ld.so(8)` specifies directories are searched in which order when resolving library dependencies:
+
+- `DT_RPATH` attribute in dynamic section is `DT_RUNPATH` does not exist
+- environment variable `LD_LIBRARY_PATH`
+- `DT_RUNPATH` attribute in dynamic section
+- `/etc/ld.so.cache`
+- `/lib`, `/usr/lib`

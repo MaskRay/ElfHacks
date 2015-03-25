@@ -23,3 +23,4 @@ _start:
 buf:
 	.string "hello\n"
 .size buf, . - buf
+.section .note.GNU-stack,"",@progbits # NX bit, see info '(as) Section'

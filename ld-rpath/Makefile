@@ -7,7 +7,7 @@ libb.so: b.c
 a: a.c libb.so
 	gcc $< -L. -lb -o $@
 aa: a.c libb.so
-	gcc $< -Wl,-rpath=. -L. -lb -o $@
+	gcc $< -Wl,-rpath='$$ORIGIN' -L. -lb -o $@
 show: all
 	ldd a aa | egrep --color '^|.*libb.*'
 	readelf -d a | egrep --color '.*RUNPATH.*' || :
