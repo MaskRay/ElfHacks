@@ -10,9 +10,10 @@ libb.so: libb.a
 libbb.so: libb.a
 	gcc -shared -Wl,--whole-archive $< -Wl,--no-whole-archive -o $@
 show: all
+	readelf -c libb.a
 	nm -D libb.so | egrep --color 'foo|bar|baz' || :
 	nm -D libbb.so | egrep --color 'foo|bar|baz'
 gdb: all
 	@:
 clean:
-	$(RM) libb.so libbb.so libb.a
+	$(RM) b.o libb.so libbb.so libb.a
