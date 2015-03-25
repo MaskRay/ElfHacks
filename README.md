@@ -21,3 +21,4 @@ Dive into ELF files using simple self-contained examples.
 | ld-whole-archive                | ld       | `--whole-archive` includes every object files (not only those which are required) |
 | ld-wrap                         | ld       | `--wrap` makes undefined references to `SYMBOL` be resolved to `__wrap_SYMBOL`    |
 | LD\_BIND\_NOW                   | ld-linux | environment variable LD\_BIND\_NOW                                                |
+| as-syscall                      | as       | make syscalls in x86-64 assembly                                                  |
