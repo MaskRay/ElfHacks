@@ -22,8 +22,8 @@ Dive into ELF files using simple self-contained examples.
 | ld-whole-archive                | ld          | `--whole-archive` includes every object files (not only those which are required) |
 | ld-wrap                         | ld          | `--wrap` makes undefined references to `SYMBOL` be resolved to `__wrap_SYMBOL`    |
 | LD\_BIND\_NOW                   | ld.so       | environment variable `LD\_BIND\_NOW`                                              |
-| as-syscall                      | as          | make syscalls in x86-64 assembly                                                  |
-| as-syscall-i386                 | as          | make syscalls in i386 assembly                                                    |
+| as-syscall                      | as,ld       | make syscalls in x86-64 assembly                                                  |
+| as-syscall-i386                 | as,ld       | make syscalls in i386 assembly                                                    |
 | shellcode-in-c                  | gcc,objcopy | write shellcode in c using gcc & objcopy                                          |
 
 ## Dynamic linker
