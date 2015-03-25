@@ -3,7 +3,7 @@ SHELL := /bin/zsh
 
 all: a
 show: all
-	nm -C a | egrep --color '^|.*foo.*'
+	nm -C a | egrep --color '^|.*(foo|bar).*'
 gdb:
 	@:
 clean:
