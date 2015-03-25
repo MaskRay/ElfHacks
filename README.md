@@ -23,9 +23,10 @@ Dive into ELF files using simple self-contained examples.
 | ld-wrap                         | ld          | `--wrap` makes undefined references to `SYMBOL` be resolved to `__wrap_SYMBOL`    |
 | LD\_BIND\_NOW                   | ld.so       | resolve all symbols at startup instead of deferring resolution to the first call  |
 | LD\_TRACE\_LOADED\_OBJECTS      | ld.so       | list dynamic library dependencies rather than running                             |
-| as-syscall                      | as,ld       | make syscalls in x86-64 assembly                                                  |
-| as-syscall-i386                 | as,ld       | make syscalls in i386 assembly                                                    |
+| as-syscall                      | as          | make syscalls in x86-64 assembly                                                  |
+| as-syscall-i386                 | as          | make syscalls in i386 assembly                                                    |
 | shellcode-in-c                  | gcc,objcopy | write shellcode in c using gcc & objcopy                                          |
+| objcopy-link-blob               | objcopy     | link blob into executable                                                         |
 
 ## Dynamic linker
 
