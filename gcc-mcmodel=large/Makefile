@@ -7,7 +7,7 @@ a: a.c
 aa: a.c
 	gcc -g -mcmodel=large $< -o $@
 show: all
-	diff <(objdump -S a) <(objdump -S aa) || :
+	diff <(objdump -Mintel -S a) <(objdump -Mintel -S aa) || :
 gdb:
 	@:
 clean:

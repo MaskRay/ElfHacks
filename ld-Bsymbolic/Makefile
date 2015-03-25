@@ -7,8 +7,8 @@ libb.so: b.c
 libbb.so: b.c
 	gcc -g -shared -fPIC -Wl,-Bsymbolic $< -o $@
 show: all
-	objdump -S libb.so | egrep --color -C 3 '.*foo.*|.*bar.*'
-	objdump -S libbb.so | egrep --color -C 3 '.*foo.*|.*bar.*'
+	objdump -Mintel -S libb.so | egrep --color -C 3 '.*foo.*|.*bar.*'
+	objdump -Mintel -S libbb.so | egrep --color -C 3 '.*foo.*|.*bar.*'
 gdb:
 	@:
 clean:
