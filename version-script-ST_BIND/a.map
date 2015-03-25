@@ -1,0 +1,4 @@
+{
+  global: extern "C++" { foo*; "A::global*" }; bar;
+  local: *;
+};
