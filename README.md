@@ -22,6 +22,7 @@ Dive into ELF files using simple self-contained examples.
 | ld-wrap                         | ld       | `--wrap` makes undefined references to `SYMBOL` be resolved to `__wrap_SYMBOL`    |
 | LD\_BIND\_NOW                   | ld-linux | environment variable LD\_BIND\_NOW                                                |
 | as-syscall                      | as       | make syscalls in x86-64 assembly                                                  |
+| as-syscall-i386                 | as       | make syscalls in i386 assembly                                                    |
 
 ## Dynamic linker
 
