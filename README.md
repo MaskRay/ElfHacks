@@ -7,6 +7,7 @@ Dive into ELF files using simple self-contained examples.
 | #                               | Program  | Description                                                                       |
 | -----------------------------   | -------- | --------------------------------------------------------------------------------- |
 | bss-section-in-c-and-c++        | gcc/g++  | .bss                                                                              |
+| gcc-nostdlib                    | gcc      | do not use standard system startup files or libraries                             |
 | gcc-pie                         | gcc      | option -fPIE                                                                      |
 | gcc-static                      | gcc      | statically linked executable                                                      |
 | g++-inline-means-weak-symbol    | g++      | inline functions translated to weak symbols                                       |
