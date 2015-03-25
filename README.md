@@ -6,6 +6,7 @@ Dive into ELF files using simple self-contained examples.
 
 | #                               | Program     | Description                                                                       |
 | -----------------------------   | ----------- | --------------------------------------------------------------------------------- |
+| backtrace                       | gcc         | `backtrace(3)`                                                                    |
 | bss-section-in-c-and-c++        | gcc/g++     | .bss                                                                              |
 | gcc-attribute-alias             | gcc         | `alias` attribute emits an alias for another symbol                               |
 | gcc-nostdlib                    | gcc         | do not use standard system startup files or libraries                             |
