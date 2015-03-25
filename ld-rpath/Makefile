@@ -15,7 +15,6 @@ show: all
 	./a || :
 	./aa
 gdb: all
-	@got=0x$$(readelf -Wr a | grep foo | awk '{print $$1}')
-	./gdb.exp $$got
+	@:
 clean:
 	$(RM) a aa libb.so
