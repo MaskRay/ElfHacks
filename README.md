@@ -9,6 +9,7 @@ Dive into ELF files using simple self-contained examples.
 | backtrace                       | gcc         | `backtrace(3)`                                                                    |
 | bss-section-in-c-and-c++        | gcc/g++     | .bss                                                                              |
 | gcc-attribute-alias             | gcc         | `alias` attribute emits an alias for another symbol                               |
+| gcc-builtin\_return\_address    | gcc         | `__builtin_return_address`                                                        |
 | gcc-nostdlib                    | gcc         | do not use standard system startup files or libraries                             |
 | gcc-pie                         | gcc         | produce a position independent executable (IMHO, like PIC+Bsymbolic)              |
 | gcc-static                      | gcc         | statically linked executable                                                      |
