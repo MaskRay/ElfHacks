@@ -1,6 +1,6 @@
 proc command {c} {
   send "$c\r"
-  expect -re "\[^\n]\n" {
+  expect -ex "\n" {
     send_user "\033\[01;34m"
     send_user $expect_out(buffer)
     send_user "\033\[m"
@@ -11,7 +11,7 @@ proc pmap {} {
   expect "(gdb) " {send_user $expect_out(buffer); command "sta"}
   expect "(gdb) " {send_user $expect_out(buffer); command "i proc"}
   expect {
-    -re {process (\d+)} {
+    -re {process (\d+).*\(gdb\) } {
       send_user $expect_out(buffer)
       command "!pmap -x $expect_out(1,string)"
     }

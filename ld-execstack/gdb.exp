@@ -2,6 +2,18 @@
 source ../common.exp
 log_user 0
 
+proc pmap {} {
+  expect "(gdb) " {send_user $expect_out(buffer); command "sta"}
+  expect "(gdb) " {send_user $expect_out(buffer); command "i proc"}
+  expect {
+    -re {process (\d+).*\(gdb\) } {
+      send_user $expect_out(buffer)
+      command "!pmap -x $expect_out(1,string) | grep -P --color 'rw.(?=.*stack)'"
+    }
+  }
+}
+
+send_user "\n\033\[7;36m  noexecstack  \033\[m\n\n"
 spawn gdb -n -q a
 pmap
 set commands [split "c
@@ -10,7 +22,10 @@ bt
 q
 " "\n"]
 run
+close
+wait
 
+send_user "\n\033\[7;36m  execstack  \033\[m\n\n"
 spawn gdb -n -q aa
 pmap
 set commands [split "b *&data
