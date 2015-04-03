@@ -10,6 +10,7 @@ Dive into ELF files using simple self-contained examples.
 | bss-section-in-c-and-c++        | gcc/g++         | .bss                                                                              |
 | gcc-attribute-alias             | gcc             | `alias` attribute emits an alias for another symbol                               |
 | gcc-builtin\_return\_address    | gcc             | `__builtin_return_address`                                                        |
+| gcc-finstrument-functions       | gcc             | generate instrumentation calls for entry and exit to functions                    |
 | gcc-nostdlib                    | gcc             | do not use standard system startup files or libraries                             |
 | gcc-pie                         | gcc             | produce a position independent executable (IMHO, like PIC+Bsymbolic)              |
 | gcc-static                      | gcc             | statically linked executable                                                      |

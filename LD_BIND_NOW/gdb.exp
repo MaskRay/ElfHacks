@@ -2,6 +2,7 @@
 source ../common.exp
 log_user 0
 
+send_user "\n\033\[7;36m  normal  \033\[m\n\n"
 spawn gdb -n -q a
 set commands [split "set exec-wrapper env LD_LIBRARY_PATH=.
 b 4
@@ -9,23 +10,25 @@ r
 # foo hasn't been called so got entry [lindex $argv 0] hasn't been resolved
 f
 x/xg [lindex $argv 0]
-x/xi \$__
+x/2xi \$__
 n
 # resolved
 x/xg [lindex $argv 0]
-x/xi \$__
+x/2xi \$__
 q
 " "\n"]
 run
 
+send_user "\n\033\[7;36m  LD_BIND_NOW=1  \033\[m\n\n"
 spawn gdb -n -q a
 set commands [split "set exec-wrapper env LD_LIBRARY_PATH=. LD_BIND_NOW=1
 b 4
 r
+# relocate entries of type R_X86_64_JUMP_SLOT during process initialization
 # got entry [lindex $argv 0] has been resolved
 f
 x/xg [lindex $argv 0]
-x/xi \$__
+x/2xi \$__
 q
 " "\n"]
 run
