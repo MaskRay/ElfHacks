@@ -8,6 +8,7 @@ Dive into ELF files using simple self-contained examples.
 | -----------------------------   | --------------- | --------------------------------------------------------------------------------- |
 | backtrace                       | gcc             | `backtrace(3)`                                                                    |
 | bss-section-in-c-and-c++        | gcc/g++         | .bss                                                                              |
+| hot-swapping                    | g++             | hot swapping of C++ programs                                                      |
 | gcc-attribute-alias             | gcc             | `alias` attribute emits an alias for another symbol                               |
 | gcc-builtin\_return\_address    | gcc             | `__builtin_return_address`                                                        |
 | gcc-finstrument-functions       | gcc             | generate instrumentation calls for entry and exit to functions                    |
