@@ -17,8 +17,8 @@ void reload()
   if (hc) dlclose(hc);
   hb = dlopen("./b.so", RTLD_LAZY | RTLD_GLOBAL);
   hc = dlopen("./c.so", RTLD_LAZY | RTLD_GLOBAL);
-  ptr_foo = dlsym(hb, "foo_impl");
-  ptr_bar = dlsym(hc, "bar_impl");
+  *(void**)&ptr_foo = dlsym(hb, "foo_impl");
+  *(void**)&ptr_bar = dlsym(hc, "bar_impl");
 }
 
 void sigint(int)
